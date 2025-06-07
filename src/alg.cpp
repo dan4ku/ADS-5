@@ -7,15 +7,15 @@
 
 int getPriority(char operation) {
   switch (operation) {
-    case '(': 
+    case '(':
       return 0;
-    case ')': 
+    case ')':
       return 1;
-    case '+': case '-': 
+    case '+': case '-':
       return 2;
-    case '*': case '/': 
+    case '*': case '/':
       return 3;
-    default: 
+    default:
       return -1;
   }
 }
@@ -87,17 +87,17 @@ int eval(const std::string& postfix) {
       int a = stack.top();
       stack.pop();
       switch (ch) {
-        case '+': 
-          stack.push(a + b); 
+        case '+':
+          stack.push(a + b);
           break;
-        case '-': 
-          stack.push(a - b); 
+        case '-':
+          stack.push(a - b);
           break;
-        case '*': 
-          stack.push(a * b); 
+        case '*':
+          stack.push(a * b);
           break;
-        case '/': 
-          stack.push(a / b); 
+        case '/':
+          stack.push(a / b);
           break;
       }
     }
