@@ -4,7 +4,31 @@
 
 template<typename T, int size>
 class TStack {
-  // добавьте код стека
+private:
+  static const int _size = size;
+  T arr[_size];
+  int top;
+public:
+  TStack() : top(-1) {}
+  bool isEmpty() const {
+    return top == -1;
+  }
+  bool isFull() const {
+    return top == size - 1;
+  }
+  T getTop() const {
+    return arr[top];
+  }
+  void push(const T& value) {
+    if (!isFull()) {
+      arr[++top] = value;
+    }
+  }
+  void pop() {
+    if (!isEmpty()) {
+      --top;
+    }
+  }
 };
 
 #endif  // INCLUDE_TSTACK_H_
