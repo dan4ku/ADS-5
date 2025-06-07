@@ -5,9 +5,10 @@
 template<typename T, int size>
 class TStack {
  private:
-  static const int _size = size;
-  T arr[_size];
+  static const int ksize = size;
+  T arr[ksize];
   int top;
+
  public:
   TStack() : top(-1) {}
   bool isEmpty() const {
